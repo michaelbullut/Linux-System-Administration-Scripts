@@ -1,4 +1,4 @@
 #!/bin/bash 
-systemctl stop mongod 
+systemctl stop postgresql 
 shutdown -r now 
 # end of script 
