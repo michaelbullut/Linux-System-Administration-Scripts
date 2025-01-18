@@ -5,5 +5,6 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb
 apt update -y # Refreshing the system repository again 
 apt install mongodb-org -y # Install MongoDB 
 systemctl enable --now mongod 
+ufw allow 27017 # Allow for remote access (optional) 
 mongod --version # Verify the MongoDB installation 
 # end of script 
