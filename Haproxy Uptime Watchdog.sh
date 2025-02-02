@@ -1,7 +1,7 @@
-#!/bin/bash   
+#!/bin/bash 
 
-SERVICE_NAME="haproxy" # The name of the haproxy service 
-SERVICE_CMD="/etc/init.d/haproxy" # The command we use to control apache 
+SERVICE_NAME="haproxy" # The name of the load balancer service 
+SERVICE_CMD="/etc/init.d/haproxy" # The command we use to control HAProxy 
 
 # Checking if the service is running or not
 if ! pgrep -x "$SERVICE_NAME" > /dev/null; then
