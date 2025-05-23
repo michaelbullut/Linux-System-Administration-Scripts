@@ -2,7 +2,7 @@
 timedatectl set-timezone 'Africa/Nairobi' 
 timedatectl 
 apt update && apt upgrade -y # To get & install the latest package lists 
-apt install -y htop glances whowatch arpwatch dsniff net-tools nload bmon vnstat iftop ifstat deborphan usbguard nmap pwgen acct traceroute clamav clamav-daemon sysstat fail2ban libpam-pwquality libpam-passwdqc apt-show-versions auditd debsums cockpit cockpit-pcp finger chkrootkit ifplugd rsync bat fd-find ncdu pv tldr tree 
+apt install -y htop glances whowatch arpwatch dsniff net-tools nload bmon vnstat iftop ifstat deborphan usbguard nmap pwgen acct traceroute clamav clamav-daemon sysstat fail2ban libpam-pwquality libpam-passwdqc apt-show-versions auditd debsums cockpit cockpit-pcp finger chkrootkit ifplugd rsync bat fd-find ncdu pv tldr tree aide 
 apt autoclean && apt autoremove -y && apt clean # Clearing disk space 
 chmod 600 /etc/crontab && chmod 700 /etc/cron.d && chmod 700 /etc/cron.daily && chmod 700 /etc/cron.hourly && chmod 700 /etc/cron.weekly && chmod 700 /etc/cron.monthly && chmod 600 /etc/ssh/sshd_config && chmod 600 /boot/grub/grub.cfg # Configuring file permissions 
 chmod 750 /etc/sudoers.d # Configuring folder permissions 
@@ -54,6 +54,8 @@ sed -ie 's/^\s*#net.ipv4.conf.all.log_martians = 1/net.ipv4.conf.all.log_martian
 sysctl -p /etc/sysctl.d/10-kernel-hardening.conf 
 sysctl -p /etc/sysctl.d/10-magic-sysrq.conf 
 sysctl -p /etc/sysctl.d/99-sysctl.conf 
+aide -c /etc/aide/aide.conf --init #Configuring AIDE 
+mv /var/lib/aide/aide.db.new /var/lib/aide/aide.db 
 wget https://dystroy.org/dysk/download/x86_64-linux/dysk # Configuring Dysk 
 mv dysk /usr/local/bin/ 
 chmod +x /usr/local/bin/dysk
