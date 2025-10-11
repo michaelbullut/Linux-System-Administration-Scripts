@@ -6,6 +6,7 @@ Simple scripts for Linux System Administration. In this repository, there are sc
 - Installation of Ansible on both Ubuntu 22.04.x & 24.04.x LTS.
 - Installation of Apache With ModSecurity on both Ubuntu 22.04.x & 24.04.x LTS.
 - Installation of HAProxy on both Ubuntu 22.04.x & 24.04.x LTS.
+- Installation of MariaDB on both Ubuntu 22.04.x & 24.04.x LTS.
 - Installation of MongoDB on both Ubuntu 22.04.x & 24.04.x LTS.
 - Installation of Nginx web server on R.H.E.L.-based (AlmaLinux and Rocky Linux) systems.
 - Installation of PHP on any version of Ubuntu.
