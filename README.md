@@ -8,7 +8,6 @@ Simple scripts for Linux System Administration. In this repository, there are sc
 - Installation of HAProxy on both Ubuntu 22.04.x & 24.04.x LTS.
 - Installation of MariaDB on both Ubuntu 22.04.x & 24.04.x LTS.
 - Installation of MongoDB on both Ubuntu 22.04.x & 24.04.x LTS.
-- Installation of Nginx on Ubuntu systems.
 - Installation of PHP on any version of Ubuntu.
 - Installation of PostgreSQL on both Ubuntu 22.04.x & 24.04.x LTS.
 - Rebooting database servers (MongoDB & PostgreSQL).
