@@ -6,8 +6,16 @@ apt update -y # Refreshing the system repository again
 apt install apache2 -y # Install Apache 
 ufw allow 'Apache Full' # Allow for both http (80) & https (443) connections 
 a2enmod headers # Module that helps control as well as modify HTTP request & response headers 
+a2enmod http2 # 
+a2enmod ssl # Activates the SSL/TLS engine for Apache to support encrypted HTTPS traffic 
+a2dismod access_compat # Disable unnecessary modules 
+a2dismod autoindex -f 
+a2dismod negotiation -f 
+a2dismod status 
 systemctl restart apache2 
 apache2 -v # Verify the Apache installation 
+sed -ie 's/ServerTokens OS/ServerTokens Prod/' /etc/apache2/conf-enabled/security.conf # Hides Apache version & operating system from HTTP response headers 
+sed -ie 's/ServerSignature On/ServerSignature Off/' /etc/apache2/conf-enabled/security.conf # Removes footer on error pages (less info for attackers) 
 apt install libapache2-mod-security2 -y # Install ModSecurity 
 a2enmod security2 # Enable ModSecurity 
 systemctl restart apache2 
