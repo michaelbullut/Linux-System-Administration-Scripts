@@ -60,8 +60,8 @@ wget https://dystroy.org/dysk/download/x86_64-linux/dysk # Configuring Dysk
 mv dysk /usr/local/bin/ 
 chmod +x /usr/local/bin/dysk
 dysk -a 
-echo "deb https://packages.cisofy.com/community/lynis/deb/ stable main" | sudo tee /etc/apt/sources.list.d/cisofy-lynis.list # Add Lynis repository 
-wget -O - https://packages.cisofy.com/keys/cisofy-software-public.key | sudo apt-key add - # Dwnload Lynis public signing key 
+echo "deb [signed-by=/usr/share/keyrings/cisofy-software-public.key] https://packages.cisofy.com/community/lynis/deb/ stable main" | sudo tee /etc/apt/sources.list.d/cisofy-lynis.list # Add Lynis repository 
+wget -O /usr/share/keyrings/cisofy-software-public.key https://packages.cisofy.com/keys/cisofy-software-public.key # Dwnload Lynis public signing key 
 apt update # Refreshing the system repository 
 apt install -y lynis 
 lynis audit system # Run security auditing tool 
