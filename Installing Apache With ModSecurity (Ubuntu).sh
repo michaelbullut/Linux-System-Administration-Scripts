@@ -7,10 +7,11 @@ apt install apache2 -y # Install Apache
 ufw allow 'Apache Full' # Allow for both http (80) & https (443) connections 
 a2enmod headers # Module that helps control as well as modify HTTP request & response headers 
 a2enmod http2 # 
+a2enmod rewrite #
 a2enmod ssl # Activates the SSL/TLS engine for Apache to support encrypted HTTPS traffic 
 a2dismod access_compat # Disable unnecessary modules 
-a2dismod autoindex -f 
-a2dismod negotiation -f 
+# a2dismod autoindex -f 
+# a2dismod negotiation -f 
 a2dismod status 
 systemctl restart apache2 
 apache2 -v # Verify the Apache installation 
