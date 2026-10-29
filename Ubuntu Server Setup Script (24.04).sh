@@ -1,8 +1,9 @@
 #!/bin/bash
 timedatectl set-timezone 'Africa/Nairobi' 
 timedatectl 
+add-apt-repository ppa:zhangsongcui3371/fastfetch -y 
 apt update && apt upgrade -y # To get & install the latest package lists 
-apt install -y htop glances fail2ban whowatch arpwatch dsniff net-tools nload bmon vnstat iftop ifstat deborphan usbguard nmap pwgen acct traceroute clamav clamav-daemon sysstat libpam-pwquality libpam-passwdqc apt-show-versions auditd debsums cockpit cockpit-pcp finger ifplugd rsync bat fd-find ncdu pv tldr tree aide rkhunter 
+apt install -y htop glances fail2ban whowatch arpwatch dsniff net-tools nload bmon vnstat iftop ifstat deborphan usbguard nmap pwgen acct traceroute clamav clamav-daemon sysstat libpam-pwquality libpam-passwdqc apt-show-versions auditd debsums cockpit cockpit-pcp finger ifplugd rsync bat fd-find ncdu pv tldr tree aide rkhunter fastfetch 
 apt autoclean && apt autoremove -y && apt clean # Clearing disk space 
 chmod 600 /etc/crontab && chmod 700 /etc/cron.d && chmod 700 /etc/cron.daily && chmod 700 /etc/cron.hourly && chmod 700 /etc/cron.weekly && chmod 700 /etc/cron.monthly && chmod 600 /etc/ssh/sshd_config && chmod 600 /boot/grub/grub.cfg # Configuring file permissions 
 chmod 750 /etc/sudoers.d # Configuring folder permissions 
