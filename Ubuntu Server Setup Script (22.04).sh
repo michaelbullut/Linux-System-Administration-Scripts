@@ -55,8 +55,8 @@ sed -ie 's/^\s*#net.ipv4.conf.all.log_martians = 1/net.ipv4.conf.all.log_martian
 sysctl -p /etc/sysctl.d/10-kernel-hardening.conf 
 sysctl -p /etc/sysctl.d/10-magic-sysrq.conf 
 sysctl -p /etc/sysctl.d/99-sysctl.conf 
-aide -c /etc/aide/aide.conf --init --quiet #Configuring AIDE 
-mv /var/lib/aide/aide.db.new /var/lib/aide/aide.db 
+#aide -c /etc/aide/aide.conf --init --quiet #Configuring AIDE 
+#mv /var/lib/aide/aide.db.new /var/lib/aide/aide.db 
 wget https://dystroy.org/dysk/download/x86_64-linux/dysk # Configuring Dysk 
 mv dysk /usr/local/bin/ 
 chmod +x /usr/local/bin/dysk
