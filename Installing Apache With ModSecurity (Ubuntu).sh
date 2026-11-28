@@ -1,7 +1,9 @@
 #!/bin/bash 
 apt update -y # Refreshing the system repository 
 apt install software-properties-common -y # Install the tool to manage software repositories 
-add-apt-repository ppa:ondrej/apache2 -y # Add the Apache Stable P.P.A. (Personal Package Archive) 
+curl -sSLo /tmp/debsuryorg-archive-keyring.deb https://packages.sury.org/debsuryorg-archive-keyring.deb 
+dpkg -i /tmp/debsuryorg-archive-keyring.deb 
+sh -c 'echo "deb [signed-by=/usr/share/keyrings/debsuryorg-archive-keyring.gpg] https://packages.sury.org/apache2/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/apache2.list' 
 apt update -y # Refreshing the system repository again 
 apt install apache2 -y # Install Apache 
 ufw allow 'Apache Full' # Allow for both http (80) & https (443) connections 
